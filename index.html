@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MORE META TAGS -->
+    <meta name="author" content="Arun Kumar">
+    <meta name="description" content="Let's build a Meal App using html ,css and vanilla javascript">
+
+    <!-- TITLE -->
+    <title>Meal App</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- FONT FAMILY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="./src/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./src/css/main.css" type="text/css" />
+
+    <!-- LINKED TO JAVASCRIPT FILES  WITH TYPE MODULE-->
+    <script src="./src/js/index.js" type="module" defer></script>
+</head>
+
+<body>
+    <div id="App">
+        <!-- fav list markup start here -->
+        <div class="fav-list-wrapper" style="visibility:hidden">
+            <div class="favlist__container" aria-hidden="true">
+
+                <button class="closeFav">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img"
+                        aria-labelledby="acjixdlyy2hufillykb2cs8p5777yrk5" class="crayons-icon">
+                        <title>Close</title>
+                        <path
+                            d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z">
+                        </path>
+                    </svg>
+                </button>
+                <p class="total-fav-list-count">Total item:0</p>
+                <div class="keepOpen"></div>
+                <div class="list"></div>
+            </div>
+        </div>
+
+
+        <div class="meal__app">
+            <div class="meal__container">
+                <!-- header markup -->
+                <header>
+                    <div class="nav__container">
+                        <nav>
+                            <a href="index.html" id="logo" draggable="false">
+                                <img src="./src/assets/logo/meal-logo.png" alt="brand logo" draggable="false">
+                            </a>
+
+                            <div class="nav__right">
+
+                                <button id="favBtn">
+                                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.00001 16C8.88625 16.0011 8.77419 15.9724 8.67501 15.9166C8.31668 15.7166 3.05176e-05 10.9916 3.05176e-05 4.99999C3.05176e-05 3.95058 0.330217 2.92777 0.943817 2.07644C1.55742 1.22512 2.42333 0.588436 3.41888 0.256583C4.41444 -0.0752696 5.48918 -0.0854683 6.49085 0.227432C7.49253 0.540332 8.37037 1.16047 9.00001 2C9.62966 1.16047 10.5075 0.540332 11.5092 0.227432C12.5108 -0.0854683 13.5856 -0.0752696 14.5811 0.256583C15.5767 0.588436 16.4426 1.22512 17.0562 2.07644C17.6698 2.92777 18 3.95058 18 4.99999C18 7.54998 16.525 10.1666 13.6167 12.7833C12.296 13.9705 10.8581 15.0204 9.32501 15.9166C9.22584 15.9724 9.11377 16.0011 9.00001 16ZM5.00002 1.33333C4.02756 1.33333 3.09493 1.71964 2.4073 2.40727C1.71967 3.0949 1.33336 4.02753 1.33336 4.99999C1.33336 9.59998 7.50001 13.6416 9.00001 14.5583C10.5 13.6416 16.6667 9.59998 16.6667 4.99999C16.6674 4.15235 16.3745 3.33062 15.8377 2.67461C15.3009 2.0186 14.5534 1.56884 13.7224 1.40185C12.8913 1.23486 12.0281 1.36095 11.2796 1.75867C10.531 2.1564 9.9434 2.80118 9.61668 3.58333C9.56645 3.7056 9.48101 3.81018 9.37121 3.88378C9.2614 3.95738 9.1322 3.99668 9.00001 3.99668C8.86782 3.99668 8.73862 3.95738 8.62882 3.88378C8.51902 3.81018 8.43357 3.7056 8.38335 3.58333C8.10587 2.91522 7.6361 2.34463 7.03371 1.94402C6.43131 1.54341 5.72346 1.33085 5.00002 1.33333Z"
+                                            fill="#010101" />
+                                    </svg>
+
+                                    <span>0</span>
+                                </button>
+                                <button id="loginBtn">Login</button>
+                            </div>
+                        </nav>
+
+                    </div>
+                    <!-- main header markup starts here -->
+                    <div class="header__main">
+
+                        <img src="./src/assets/images/veggi_food_bowl.png" alt="veggie-bowl" class="veggie__bowl"
+                            draggable="false">
+
+                        <img src="./src/assets/images/human_chief.png" alt="human-chief" class="human__chief"
+                            draggable="false">
+
+                        <h1>Looking for a meal !</h1>
+                        <div class="slogan">
+                            <span>Catchup with delicious and spicy recipie</span>
+                        </div>
+
+                        <!-- search markup -->
+                        <div class="search__container">
+                            <form action="./index.html" method="GET">
+                                <div class="search">
+                                    <input id="searchInput" type="text" placeholder="Search for meal" autocomplete="off"
+                                        required />
+                                    <button id="closeBtn" style="visibility: hidden;" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" role="img"
+                                            aria-labelledby="acjixdlyy2hufillykb2cs8p5777yrk5" class="crayons-icon">
+                                            <title id="acjixdlyy2hufillykb2cs8p5777yrk5">Close</title>
+                                            <path
+                                                d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button id="searchBtn" type="submit">
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.75 0.166668C6.62049 0.166764 5.50738 0.436971 4.50354 0.954746C3.49971 1.47252 2.63424 2.22285 1.97936 3.14313C1.32448 4.06341 0.899172 5.12696 0.738921 6.24504C0.57867 7.36312 0.688122 8.50331 1.05815 9.57049C1.42817 10.6377 2.04804 11.6009 2.86603 12.3798C3.68402 13.1587 4.67642 13.7306 5.76043 14.048C6.84443 14.3654 7.98862 14.4189 9.09751 14.2041C10.2064 13.9893 11.2479 13.5125 12.135 12.8133L15.1783 15.8567C15.3355 16.0085 15.546 16.0925 15.7645 16.0906C15.983 16.0887 16.192 16.001 16.3465 15.8465C16.501 15.692 16.5887 15.483 16.5906 15.2645C16.5925 15.046 16.5085 14.8355 16.3567 14.6783L13.3133 11.635C14.1367 10.5905 14.6493 9.33534 14.7926 8.01311C14.9359 6.69088 14.704 5.35502 14.1235 4.15841C13.543 2.96181 12.6374 1.9528 11.5102 1.24686C10.3831 0.540923 9.07997 0.166579 7.75 0.166668ZM2.33333 7.25C2.33333 5.81341 2.90401 4.43566 3.91984 3.41984C4.93566 2.40402 6.31341 1.83333 7.75 1.83333C9.18659 1.83333 10.5643 2.40402 11.5802 3.41984C12.596 4.43566 13.1667 5.81341 13.1667 7.25C13.1667 8.68659 12.596 10.0643 11.5802 11.0802C10.5643 12.096 9.18659 12.6667 7.75 12.6667C6.31341 12.6667 4.93566 12.096 3.91984 11.0802C2.90401 10.0643 2.33333 8.68659 2.33333 7.25Z"
+                                            fill="#D7D7D7" />
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+                <!-- card container markup -->
+                <div class="card__container"></div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

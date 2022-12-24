@@ -1,0 +1,405 @@
+#App{
+    min-height: var(--min-height);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ==== MEAL CONTAINER ====== */
+ 
+
+div.meal__container{
+    position:relative;
+}
+
+/* ==== FAV LIST CSS ====== */
+div.fav-list-wrapper{
+    width:var(--max-width);
+    height:var(--min-height);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.4);
+    z-index: var(--z-high);
+}
+
+
+div.favlist__container{
+  position:absolute;
+  display:block;
+  width:280px;
+  top:0;
+  bottom:0;
+  right:0;
+  background-color:rgba(255,255,255,1);
+  z-index: 100;
+  height:var(--min-height);
+  box-shadow: 0 0 20px -10px;
+  
+}
+
+/* == HADLE THE CLOSE AND OPEN FAV LIST */
+
+div.favlist__container[aria-hidden="true"] {
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+
+
+  div.favlist__container[aria-hidden="false"] {
+    transition-duration: 300ms;
+    transition-property: transform;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+
+div.favlist__container button.closeFav{
+   background: transparent;
+   outline: 1px solid  var(--clr-black);
+   padding:0.3rem;
+   float:right;
+   margin-right:0.75rem;
+   margin-top:0.5rem;
+   border-radius: 0.125rem;
+   -webkit-border-radius: 0.125rem;
+   -moz-border-radius: 0.125rem;
+   -ms-border-radius: 0.125rem;
+   -o-border-radius: 0.125rem;
+  
+}
+
+p.total-fav-list-count{
+    margin-top:1rem;
+    margin-left:0.7rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+}
+.keepOpen {
+    clear: both;
+    display: table;
+    content: "";
+}
+div.favlist__container ul.fav-list{
+    display:flex;
+    flex-direction:column;
+    margin-top:1.2rem;
+}
+
+div.favlist__container ul.fav-list li{
+    list-style-type: none;
+    border:1px solid #d7d7d7;
+    padding:0.25rem 0;
+    margin-bottom:0.75rem;
+}
+
+div.favlist__container ul.fav-list li div{
+    display: inline-flex;
+    align-items: center;
+}
+div.favlist__container ul.fav-list li img{
+    width:3rem;
+    height:3rem;
+    display:block;
+    margin:0 0.75rem;
+}
+
+div.favlist__container ul.fav-list li span, 
+div.favlist__container ul.fav-list li p {
+    font-size: 0.9rem;
+}
+
+div.favlist__container ul.fav-list li span{
+    margin-left: 0.4rem;
+    font-weight: var(--font-semi-bold);
+}
+
+div.favlist__container div.list{
+    overflow: auto;
+    height:95vh;
+} 
+
+div.favlist__container div.list::-webkit-scrollbar{
+    display:none;
+}
+
+div.favlist__container div.list button.removeList{
+    background: transparent;
+    float:right;
+    margin-top:0.75rem;
+    margin-right:0.5rem;
+}
+
+div.list button.removeList svg{
+    fill: rgb(245, 168, 143);
+}
+ 
+/* ==== Header ====== */
+
+ 
+header div.nav__container{
+    border-bottom:1px solid var(--clr-border);
+    position: fixed;   
+    top: 0; 
+    left:0;
+    z-index: var(--z-medium);
+    width: var(--max-width);
+    background:var(--clr-white);
+}
+
+/* =====  NAVIGATION   ===== */
+
+header nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:96%;
+    margin:0 2%;
+    padding:0.35rem 0;
+}
+
+nav a#logo img{
+    width:2.6rem;
+    margin-left:0.5rem;
+}
+
+nav button#favBtn{
+    margin-right:24px;
+    position:relative;
+    background: transparent;
+    padding:0.5rem 1rem;
+}
+
+nav button#favBtn span{
+ position:absolute !important;
+ top:0;
+ right:-12px;
+ background-color:var(--clr-secondary);
+ color:var(--clr-white);
+ padding:0.25rem;
+ border-radius: 0.5rem;
+
+ -webkit-border-radius: 0.5rem;
+ -moz-border-radius: 0.5rem;
+ -ms-border-radius: 0.5rem;
+ -o-border-radius: 0.5rem;
+}
+
+nav button#loginBtn{
+padding:0.5rem 1rem;
+  background-color: var(--clr-primary);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.7px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+/* ====== PAGE INDEX ====== */
+
+div.page__index{
+    margin-left:2%;
+    margin-left:1rem;
+    margin-top:1rem;
+    padding-top:8vh;
+}
+ 
+div.page__index a.current__index{
+    color:#D23737;
+    font-weight: var(--fw-semi-bold);
+}
+
+
+
+/* ======== MEAL INFO CONTAINER ====== */
+
+div.meal__info__container{
+    text-align: center;
+    margin-top:2rem;
+    max-width: 400px;
+    margin:0 auto;
+}
+
+div.meal__info__container h3{
+  font-weight: var(--fw-regular);
+  font-size: 16px;
+}
+div.meal__info__container h1{
+    margin:0.5rem 0 1rem 0;
+    font-size: 28px;
+    font-weight: var(--fw-semi-bold);
+}
+
+div.meal__wrapper{
+    position:relative;
+}
+
+div.meal__image{
+    height:250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 1;
+    border-radius: 0.35rem;
+    -webkit-border-radius: 0.35rem;
+    -moz-border-radius: 0.35rem;
+    -ms-border-radius: 0.35rem;
+    -o-border-radius: 0.35rem;
+}
+
+div.meal__wrapper:hover > div.meal__image {
+    opacity: 0.6;
+}
+
+div.meal__wrapper a.watchBtn{
+   position:absolute;
+   top:50%;
+   left:50%;
+   background-color: var(--clr-primary);
+   padding:0.65rem 1.2rem;
+   outline:1px solid var(--clr-black);
+   transform: translate(-50%,-50%);
+   -webkit-transform: translate(-50%,-50%);
+   -moz-transform: translate(-50%,-50%);
+   -ms-transform: translate(-50%,-50%);
+   -o-transform: translate(-50%,-50%);
+   border-radius: 0.5rem;
+   -webkit-border-radius: 0.5rem;
+   -moz-border-radius: 0.5rem;
+   -ms-border-radius: 0.5rem;
+   -o-border-radius: 0.5rem;
+   opacity:0;
+   transition:opacity 300ms linear;
+   -webkit-transition:opacity 300ms linear;
+   -moz-transition:opacity 300ms linear;
+   -ms-transition:opacity 300ms linear;
+   -o-transition:opacity 300ms linear;
+}
+
+
+div.meal__wrapper a.watchBtn:hover{
+    background-color:var(--clr-white);
+    outline:1px solid var(--clr-black);
+    
+}
+
+div.meal__wrapper:hover > a.watchBtn{
+    opacity:1;
+}
+
+
+div.meal__wrapper a.watchBtn span{
+    vertical-align: middle;
+    margin-left:4px;
+    color:var(--clr-black);
+}
+
+
+/* ====== MEAL INSTRUCTION */
+div.meal__instruction{
+    text-align: left;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+
+div.meal__instruction ul li{
+    list-style-type: none;
+    margin-bottom: 0.75em;
+    margin-left:0.5em;
+}
+
+div.meal__instruction ul p{
+   line-height: 155%;
+   font-size: 0.9rem;
+}
+
+
+/* =========
+   Implementing drop caps
+   ========= */
+
+   div.meal__instruction ul li:first-child > p::first-letter{
+    float:left;
+    color: purple;
+    font-weight: bold;
+    line-height: 90%;
+    font-size: 500%;
+    margin-right:0.65rem;
+    font-family: georgia;
+    initial-letter: 3;
+    -webkit-initial-letter:3;
+   }
+
+/* ======== 
+  MEDIA QUERYIES 
+  =========== */
+@media only screen and (min-width: 768px) {
+     /* ====== PAGE INDEX ====== */
+     
+     div.page__index{
+         margin-left:2%;
+        }
+        
+        /* ====== MEAL CONTAINER ====== */
+    div.meal__info__container{
+        max-width: 60vw;
+        margin:0 auto;
+    }
+
+    div.meal__image{
+        height:350px;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+}
+
+    
+
+
+    div.meal__instruction ul li{
+        list-style-type: none;
+        margin-bottom: 0.8rem;
+    }
+
+    div.meal__instruction ul li p{
+        line-height: 150%;
+        font-size: 0.95rem;
+     }
+}
+@media only screen and (min-width: 961px) {
+
+    /* == header ===*/
+    
+    nav a#logo img{
+        margin-left:0rem;
+    }
+
+    /* ====== PAGE INDEX ====== */
+
+    div.page__index{
+        margin-left:2%;
+    }
+
+    div.meal__info__container{
+        max-width: 55vw;
+        margin:0 auto;
+    }
+
+    div.meal__instruction ul{
+        columns:2;
+    }
+
+}
