@@ -9,9 +9,9 @@ I used the concept of function expression , modules , async await to build this 
 It was an awesome exprerience :)
 
 ## Skills:
-  1. HTML
-  2. CSS
-  3. JAVASCRIPT
+1. HTML
+2. CSS
+3. JAVASCRIPT
 
 ## Api References:
 
