@@ -22,5 +22,5 @@ I used the concept of function expression , modules , async await to build this 
 ## Authors
 
 - Arun kumar: https://github.com/Arun-kumar-95
-- It was an awesome exprerience :)
+- It was an awesome exprerience :) building this web app
 
