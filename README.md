@@ -1,11 +1,11 @@
 # Vanilla JavaScript: Meal App
 Hello there!! 
 
+Are you looking for a meal || searching for a meal recepie then this app is all yours.
+
 watch live demo :https://arun-kumar-95.github.io/vjs-mealapp/
 
 I used the concept of function expression , modules , async await to build this amazing app
-
-It was an awesome exprerience :)
 
 ## Skills:
 
@@ -22,4 +22,5 @@ It was an awesome exprerience :)
 ## Authors
 
 - Arun kumar: https://github.com/Arun-kumar-95
+- It was an awesome exprerience :)
 
