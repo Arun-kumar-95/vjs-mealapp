@@ -35,9 +35,11 @@ export const loadMeals = (mealData) => {
     let isLiked = false;
 
     // changing the like thumb if liked
-    for (let i = 0; i < likedMeal.length; i++) {
-      if (likedMeal[i].idMeal == idMeal) {
-        isLiked = true;
+    if (likedMeal != null) {
+      for (let i = 0; i < likedMeal.length; i++) {
+        if (likedMeal[i].idMeal == idMeal) {
+          isLiked = true;
+        }
       }
     }
 

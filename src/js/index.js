@@ -3,6 +3,7 @@ import * as app from "./main.js";
 
 // GETTINNG ALL THE MEALS DATA AND STORING INSIDE MEALS
 let meals = await app.getMeals();
+ 
 
 // LOAD MEALS TO DOM
 app.loadMeals(meals);
