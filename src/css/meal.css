@@ -172,14 +172,14 @@ nav a#logo img{
     margin-left:0.5rem;
 }
 
-nav button#favBtn{
+nav button.favBtn{
     margin-right:24px;
     position:relative;
     background: transparent;
     padding:0.5rem 1rem;
 }
 
-nav button#favBtn span{
+nav button.favBtn span{
  position:absolute !important;
  top:0;
  right:-12px;
@@ -226,18 +226,19 @@ div.page__index a.current__index{
 
 div.meal__info__container{
     text-align: center;
-    margin-top:2rem;
     max-width: 400px;
     margin:0 auto;
 }
 
 div.meal__info__container h3{
-  font-weight: var(--fw-regular);
-  font-size: 16px;
+    font-weight: var(--fw-regular);
+    font-size: 16px;
+    margin-top:2.5em;
 }
+
 div.meal__info__container h1{
-    margin:0.5rem 0 1rem 0;
-    font-size: 28px;
+    margin:0.5rem 0 2rem 0;
+    font-size: 1.75rem;
     font-weight: var(--fw-semi-bold);
 }
 
@@ -251,11 +252,16 @@ div.meal__image{
     background-size: cover;
     background-position: center center;
     opacity: 1;
-    border-radius: 0.35rem;
-    -webkit-border-radius: 0.35rem;
-    -moz-border-radius: 0.35rem;
-    -ms-border-radius: 0.35rem;
-    -o-border-radius: 0.35rem;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    transition: opacity 250ms ease-in-out;
+    -webkit-transition: opacity 250ms ease-in-out;
+    -moz-transition: opacity 250ms ease-in-out;
+    -ms-transition: opacity 250ms ease-in-out;
+    -o-transition: opacity 250ms ease-in-out;
 }
 
 div.meal__wrapper:hover > div.meal__image {
@@ -285,6 +291,8 @@ div.meal__wrapper a.watchBtn{
    -moz-transition:opacity 300ms linear;
    -ms-transition:opacity 300ms linear;
    -o-transition:opacity 300ms linear;
+   display:block;
+   min-width: 100px;
 }
 
 
@@ -309,8 +317,7 @@ div.meal__wrapper a.watchBtn span{
 /* ====== MEAL INSTRUCTION */
 div.meal__instruction{
     text-align: left;
-    margin-top:2rem;
-    margin-bottom:2rem;
+    margin:3em 0;
 }
 
 div.meal__instruction ul li{
@@ -331,7 +338,7 @@ div.meal__instruction ul p{
 
    div.meal__instruction ul li:first-child > p::first-letter{
     float:left;
-    color: purple;
+    color: rgb(18, 15, 18);
     font-weight: bold;
     line-height: 90%;
     font-size: 500%;
@@ -383,6 +390,9 @@ div.meal__instruction ul p{
 
     /* == header ===*/
     
+    div.meal__image{
+        height:380px;
+    }
     nav a#logo img{
         margin-left:0rem;
     }

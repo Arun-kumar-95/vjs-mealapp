@@ -1,10 +1,10 @@
 // GLOBALS
 
 const mealDIV = document.querySelector("div.card__container");
-const favBtn = document.querySelector("button#favBtn");
+const favBtn = document.querySelector("button.favBtn");
 const favListDIV = document.querySelector("div.list");
 const favDIV = document.querySelector("div.favlist__container");
-const closeBtn = document.getElementById("closeBtn");
+const mealContainer = document.querySelector(".meal__container");
 
 // FAB LIST ARRAY
 let likedMeal = [];
@@ -115,13 +115,13 @@ const removeMealFromList = () => {
 export const updateFavList = () => {
   // GET ALL THE FAV LIST FROM LOCAL STORAGE
   let favListNumber = JSON.parse(localStorage.getItem("mealsId"));
-
+  const span = document.querySelector("span.totalItem");
   if (favListNumber != null) {
     if (favListNumber.length < 9) {
-      favBtn.children[1].textContent = "0" + favListNumber.length;
+      span.textContent = "0" + favListNumber.length;
     } else {
       // UPDATE THE FAV LIST NUMBER
-      favBtn.children[1].textContent = favListNumber.length;
+      span.textContent = favListNumber.length;
     }
   }
 };
@@ -256,4 +256,62 @@ export const readMoreHandler = (readmoreBtns) => {
       window.open(`meal.html?id=${recipeId}`);
     });
   });
+};
+
+// GET MEAL BY ID HANDLER
+export const getMealById = async (id) => {
+  document.querySelector(".loader").style.display = "block";
+
+  let fetchResp = await fetch(
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+  );
+  let resp = await fetchResp.json();
+  meals = resp.meals[0];
+  return meals;
+};
+
+//   LOAD MEAL INFO
+export const loadMealDetails = (mealData) => {
+  let html = `
+    <div class="meal__info__container">
+    <h3>Meal id: #${mealData.idMeal}</h3>
+    <h1>${mealData.strMeal}</h1>
+  
+    <div class="meal__wrapper">
+        <div class="meal__image" style="background-image: url('${mealData.strMealThumb}')"></div>
+        <a class="watchBtn" href="${mealData.strYoutube}">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.5 7.325V12.675C7.5 13.075 7.675 13.3667 8.025 13.55C8.375 13.7333 8.71667 13.7167 9.05 13.5L13.2 10.85C13.5167 10.6667 13.675 10.3833 13.675 10C13.675 9.61667 13.5167 9.33333 13.2 9.15L9.05 6.5C8.71667 6.28333 8.375 6.26667 8.025 6.45C7.675 6.63333 7.5 6.925 7.5 7.325ZM10 20C8.61667 20 7.31667 19.7373 6.1 19.212C4.88333 18.6873 3.825 17.975 2.925 17.075C2.025 16.175 1.31267 15.1167 0.788 13.9C0.262667 12.6833 0 11.3833 0 10C0 8.61667 0.262667 7.31667 0.788 6.1C1.31267 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.31233 6.1 0.787C7.31667 0.262333 8.61667 0 10 0C11.3833 0 12.6833 0.262333 13.9 0.787C15.1167 1.31233 16.175 2.025 17.075 2.925C17.975 3.825 18.6873 4.88333 19.212 6.1C19.7373 7.31667 20 8.61667 20 10C20 11.3833 19.7373 12.6833 19.212 13.9C18.6873 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6873 13.9 19.212C12.6833 19.7373 11.3833 20 10 20ZM10 18C12.2167 18 14.1043 17.221 15.663 15.663C17.221 14.1043 18 12.2167 18 10C18 7.78333 17.221 5.89567 15.663 4.337C14.1043 2.779 12.2167 2 10 2C7.78333 2 5.896 2.779 4.338 4.337C2.77933 5.89567 2 7.78333 2 10C2 12.2167 2.77933 14.1043 4.338 15.663C5.896 17.221 7.78333 18 10 18Z"
+                    fill="#272D2F" />
+            </svg>
+            <span>Watch</span>
+        </a>
+    </div>
+  
+    <div class="meal__instruction">
+    </div>
+  </div>
+    `;
+
+  document.querySelector(".loader").style.display = "none";
+  mealContainer.innerHTML += html;
+};
+
+//   LOAD MEAL INSTRUCTION
+export const loadMealInstruction = (mealData) => {
+  let info = mealData.strInstructions;
+  let infoText = [];
+  infoText = info.split("\n");
+  let ul = document.createElement("ul");
+  infoText.forEach((text) => {
+    let li = document.createElement("li");
+    let p = document.createElement("p");
+    p.textContent = text;
+    li.appendChild(p);
+
+    ul.appendChild(li);
+  });
+  document.querySelector(".meal__instruction").appendChild(ul);
 };

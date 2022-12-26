@@ -200,14 +200,14 @@ nav a#logo img{
     margin-left:0.5em;
 }
 
-nav button#favBtn{
+nav button.favBtn{
     margin-right:24px;
     position:relative;
     background: transparent;
     padding:0.5rem 1rem;
 }
 
-nav button#favBtn span{
+nav button.favBtn span{
  position:absolute !important;
  top:0;
  right:-8px;

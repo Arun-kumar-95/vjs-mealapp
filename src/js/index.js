@@ -20,7 +20,7 @@ let readMoreBtns = document.querySelectorAll("button.readMore");
 app.readMoreHandler(readMoreBtns);
 
 // FAVLIST SIDE BAR
-const favouriteButton = document.querySelector("button#favBtn");
+const favouriteButton = document.querySelector("button.favBtn");
 app.sideBarFavriteSlider(favouriteButton);
 
 const favouriteListContainer = document.querySelector("div.favlist__container");
